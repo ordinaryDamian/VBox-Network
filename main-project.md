@@ -65,4 +65,3 @@ Jedno z podstatných nastavený je nastavenie sietovej karty v danom virtualnom 
 
 ![echo PATH](./obrazky/VirtualBox_CG9kXvP51p.png)
 
-asjldbasbdasbdas
