@@ -58,3 +58,11 @@ Virtual Box je program v ktorom používateľ môže simulovať virtulany počí
 
 
 VB - Virtual box ma mnoho nastavený
+
+![echo PATH](./obrazky/VirtualBox_JDvy6DNgF6.png)
+
+Jedno z podstatných nastavený je nastavenie sietovej karty v danom virtualnom PC
+
+![echo PATH](./obrazky/VirtualBox_CG9kXvP51p.png)
+
+
