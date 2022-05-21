@@ -89,6 +89,8 @@ Po rozklinutý položky Advanced si môžeme vybrat aj adaptér ktorý sa bude z
 NAT - Network address translation
 
 
+
+
 <!-- Obsah vygenerovať neskor
 ak mas extension tak CTRL+SHIFT+P a napisat create table of content
 -->
