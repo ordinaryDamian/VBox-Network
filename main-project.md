@@ -164,6 +164,7 @@ __Sumarizácia__
 ### Nastavenie
 ![echo PATH](./obrazky/VirtualBox_Tl9xQfuWIH.png)
 Pre vyskúśanie Bridge adaptéra budeme potrebovať uz existujúci Guest OS alebo si ho vytvoríme.
+Pripojenie na nejakú sieť (postačí aj pripojenie na domácu privátnu sieť ktorá môže mať prístup aj na internet).
 Po vytvorený si klikneme na tlačidlo Settings.
 1. Po otvorený nastavený sa navigujeme do záložky Network
 2. Tam si klikneme na akýkoľvek adaptér (perferovaný je 1 aby sme pochopili nastavenia) a zaškrtneme _Enable Network Adapter_ 
@@ -173,6 +174,59 @@ Po vytvorený si klikneme na tlačidlo Settings.
 6. V prípade potreby zmeníme MAC acresu virtualneho adaptéra
 
 Potom už len všetko potvrdíme a bootujeme do Guest OS
+### V Guest OS
+Po na GRUBe a nabootovaný sa prihlásime
+
+Potom čo sme sa dostali na tty session použijeme príkaz 
+```Bash
+ip a
+```
+s výstupom: ![echo PATH](./obrazky/VirtualBoxVM_PaHt87dWqz.png)
+
+alebo:
+```Bash
+ifconfig
+```
+s výstupom:![echo PATH](./obrazky/VirtualBoxVM_L86E4ss49J.png)
+
+vďaka týmto príkazom si vieme zistiť IP adresu našho Guest OS, pre otestovanie toho ci sa tento Guest OS vieme pripojiť z host OS zistíme či SSH klient je na tomto Guest OS zapnutý príkazom:
+```Bash
+sudo systemctl status sshd
+```
+výstup: ![echo PATH](./obrazky/VirtualBoxVM_fPlppY7WNi.png)
+Z tohoto obrázku vieme usúdiť že SSH deamon je na našom Guest OS aktívny a že server počúva pre túto službu na štandardnom porte __22__.
+
+Teraz sa mlžeme skúsiť pripojiť na tento port z nášho host OS cez SSH. Je niekoľko spôsobou ako to urobiť, jedným z nich je program PuTTY ale klasický príkazový riadok.
+
+Klavesovou skratkov __WIN+R__ si otvoríme Run command Windowse a napíšeme doň `cmd` a stlačíme enter, to by nám malo otvoriť príkazový riadok 
+Do príkazového riadka napíšeme príkaz:
+```CMD
+ssh pouzivatel@IP adresa Guesta
+ssh damian@192.168.0.102
+```
+výstup:![echo PATH](./obrazky/Code_ReQBAEd5sU.png)
+1. Príkaz ktorý chcem vykonať
+1. používateľ cez ktorého sa chcem prihlásiť
+1. IP adresa host OS
+1. zadám heslo daného používateľa pre prihlásenie
+
+Občas sa nás systém može spýtať či sme si naozaj istý, vtedy stači napisať yes a pokračovať
+Potom čo sme sa pripojili sa možme presvedčit ze sme naozaj pripojený na spravny počitač príkazmi:
+```Bash
+neofetch
+sudo systemctl status sshd
+```
+___
+## Pripojenie cez NAT
+Ako už bolo spomenuté vyššie tak pripojenie cez NAT je pripojenie na host OS do inej siete, preto budume musieť použit port-forwarding, to sa nastavuje na Routery v konvenčnej siete ale kedže my máme virtualizovanú celu sieť tak to budeme musieť nastaviť v prostedý VirtualBoxu.
+### Nastavenie NAT
+Budeme postupovať podobne ako pri Bridge adaptéry
+![echo PATH](./obrazky/VirtualBox_e9NvH4Rps6.png)
+
+1.Prejdeme na náš nastavený Virtuálny OS a prejdeme do Settings
+2.Presunieme sa do záložky Network
+3.Zvolíme si niektorý z adaptérov
+
 
 ## Zdroje
 
