@@ -223,10 +223,52 @@ Ako už bolo spomenuté vyššie tak pripojenie cez NAT je pripojenie na host OS
 Budeme postupovať podobne ako pri Bridge adaptéry
 ![echo PATH](./obrazky/VirtualBox_e9NvH4Rps6.png)
 
-1.Prejdeme na náš nastavený Virtuálny OS a prejdeme do Settings
-2.Presunieme sa do záložky Network
-3.Zvolíme si niektorý z adaptérov
+1. Prejdeme na náš nastavený Virtuálny OS a prejdeme do Settings
+1. Presunieme sa do záložky Newtwork
+1. Zvolíme si niektorý z adaptérov
+1. Uistime sa že je daný adaptér zapnutý
+2. V sekcii Attached to zvolíme NAT 
+3. Uistíme sa že kábel virtualne zapojený
+4. Zmeníme MAC adresu ak je to potrebné
+5. Povšimneme si tlačidla Port-Forwarding
 
+Potom čo sme uspešne nastavili sieťové nastavenia potvrdíme ich a nabootujeme do host OS
+### Nastavenie Port-Forwardingu
+Po GRUBe a nabootovaný sa prihlásime a štandardními prikazmi si overíme či Guest OS podporuje SSH a či má nejakú IP adresu na svojom private networku.
+```Bash
+sudo systemctl status sshd
+ip a
+ifconfig
+```
+výstup: ![echo PATH](./obrazky/VirtualBoxVM_LU090PFXpu.png)
+Príkazmi sme zistili že host ma aktívneho deamona SSHD a počúva na porte 22, taktiež sme zistili že Guest OS ma na svojom privátnom Networku IP adresu z rozshahu ktorý sme spomínali vyššie vďaka vstavanému DHCP serveru vo VirtualBoxe.
+
+Naviguje sa prvými dvoma krokmi z posledného obrázka potom si klikneme na tlačidlo Port-Forwarding.
+
+![echo PATH](./obrazky/VirtualBox_CVbJz3SdMl.png)
+
+Po otvorený port-forwarding na nás vyskočí tabuĺka kde budeme pridávať pravydlá pre nás virtualny Router. + a x symbolmy môžme pridávať alebo odoberáť pravidlá.
+1. Ako prvú nastavíme Host IP, to je IP adresa našeho fyzického PC cez ktprý sa budeme pripájať
+2. Host port na našom fyzickom PC je port cez ktorý s budeme pripajať na SSH port na Guest OS
+3. Guest IP je ip adresa virtualneho PC na inej siety na ktorý sa budeme pripájať
+4. Guest port je port na virtualnom OS na ktorý sa budeme chcieť pripojiť
+
+Pre pripojenie na vzdialený OS na idej siety možeme použiť ak Loopback adresu kedze táto požiadavka ide na Router ktorý keď uvidí že specifikujeme port 2222 tak nepresmeruje požiadvku na náš PC ale na PC inej sieťe s iným portom podľa toho ktoý port sme v tabuľke specifikovali.
+
+Potom čo sme dokončili nastavenie port-forwarding možeme vyskúsať pripojenie na Guest OS cez SSH. Podobne ako predtým (pripojenie cez NAT) sa pripojíme cez CMD
+
+![echo PATH](./obrazky/WindowsTerminal_WLFvH3L4Cd.png)
+
+1. špecifikujeme aký prikaz chcemem
+2. Na akého používateľa sa chcemem pripojiť
+3. Na akú IP adresu sa chceme pripojiť (V našom prípade to može byt Loopback alebo adresa na našom privátom networku)
+4. argumentom -p špecifikujeme že chceme pre pipojenie použíť iný než defaultny port
+5. Tu specifikuje aký iný port chceme použiť
+6. Po úspešnej autentifikácii už len zadáme heslo pre prihlásenie
+
+Žlto zvýraznená čast hovorí o tom že SSH na našom host PC ešte nemá uložený klúč k takejto predošlej komunikácii a to že nevie tento Guest overiť, zobrazí nam jeho fingertprint (identifikacný kód podľa ktorého vieme Guest OS presne určit), a opýta sa nás či chceme pokračovat --> jednoducho zadáme `yes`, taktiež si tento fingerprint uloží pre dalšiu komunikáciu.
+
+Takto sme sa úspešne prihlasili cez SSH na PC vo vzdialenej sieti.
 
 ## Zdroje
 
