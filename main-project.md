@@ -53,7 +53,7 @@ img[src*='#center'] {
 
 ## Čo je Virtual Box a čo su jeho nastavenia
 
-Virtual Box je program v ktorom používateľ môže simulovať virtulany počítač ktorý bezi v takzvanom sandboxe a je oddelený od hlavného počitača ktorý beží priamo na komponentoch. Virtual Box beží ako program to znamená že o požiadavky na prístup k komponentom (CPU, RAM, ...) prechádzaju cez OS ktorý beží na komponentoch.
+Virtual Box (type-2 hypervisor) je program v ktorom používateľ môže simulovať virtulany počítač ktorý bezi v takzvanom sandboxe a je oddelený od hlavného počitača ktorý beží priamo na komponentoch. Virtual Box beží ako program to znamená že o požiadavky na prístup k komponentom (CPU, RAM, ...) prechádzaju cez OS ktorý beží na komponentoch.
 
 
 
@@ -65,3 +65,13 @@ Jedno z podstatných nastavený je nastavenie sietovej karty v danom virtualnom 
 
 ![echo PATH](./obrazky/VirtualBox_CG9kXvP51p.png)
 
+V záložke Network máme niekoľko adaptérov ktoré si vieme zapnút, to môžeme chápať ako 4 rozdielne sietové kartky na ktoré si vieme nastaviť iné módy ktoré sú priradené k fyzickým komponentom.
+
+V ďalšej ponuke si vieme vybrať cez ktorý fyzicky interface chceme tento PC nechať komunikovať.
+
+V ponuke Advanced si môžeme nastaviť port-forwarding alebo virtualnu MAC adresu daného adaptéra, plus niekoľko dalších nastavený.  
+
+
+<!-- Obsah vygenerovať neskor
+ak mas extension tak CTRL+SHIFT+P a napisat create table of content
+-->
