@@ -57,12 +57,12 @@ Virtual Box (type-2 hypervisor) je program v ktorom používateľ môže simulov
 
 
 
-VB - Virtual box ma mnoho nastavený
+### VB - Virtual box ma mnoho nastavený
 
 ![echo PATH](./obrazky/VirtualBox_JDvy6DNgF6.png)
 
 Jedno z podstatných nastavený je nastavenie sietovej karty v danom virtualnom PC
-
+### Sieťové nastavenia vo Virtual Boxe
 ![echo PATH](./obrazky/VirtualBox_CG9kXvP51p.png)
 
 V záložke Network máme niekoľko adaptérov ktoré si vieme zapnút, to môžeme chápať ako 4 rozdielne sietové kartky na ktoré si vieme nastaviť iné módy ktoré sú priradené k fyzickým komponentom.
@@ -70,6 +70,23 @@ V záložke Network máme niekoľko adaptérov ktoré si vieme zapnút, to môž
 V ďalšej ponuke si vieme vybrať cez ktorý fyzicky interface chceme tento PC nechať komunikovať.
 
 V ponuke Advanced si môžeme nastaviť port-forwarding alebo virtualnu MAC adresu daného adaptéra, plus niekoľko dalších nastavený.  
+
+### Typ adaptéra
+
+Po rozklinutý položky Advanced si môžeme vybrat aj adaptér ktorý sa bude zobrazovať v samotnom guest OS
+
+<ul style="list-style-type:circle;">
+  <li>AMD PCNet PCI II (Am79C970A)</li>
+  <li>AMD PCNet FAST III (Am79C973)</li>
+  <li>Intel PRO/1000 MT Desktop (82540EM), <b>Default</b></li>
+  <li>Intel PRO/1000 T Server (82543GC)</li>
+  <li>Intel PRO/1000 MT Server (82545EM)</li>
+  <li>Paravirtualized network adapter (virtio-net)</li>
+</ul>
+
+
+#### NAT
+NAT - Network address translation
 
 
 <!-- Obsah vygenerovať neskor
