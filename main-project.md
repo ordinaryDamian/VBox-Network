@@ -85,11 +85,35 @@ Po rozklinutý položky Advanced si môžeme vybrat aj adaptér ktorý sa bude z
 </ul>
 
 
-#### NAT
+#### NAT <b>Default</b>
 NAT - Network address translation
 
+Najjednoduchší sposob ako sa cez guest PC pripojiť na internet a surfovať externé stránky. Nevyžaduje si žiadne nastavenia a funguje takzvane out of the box. Je zvolený ako prevolený režim virtualnej sietovej karty.
+
+Guest OS sa chová ako keby to bol PC za routerom na privatnej siety, tento router je v realite __Oracle VM VirtualBox NAT Engine__ ktorý dostane packety z Guesta a znova ich zabali a posle na router z OS vo fyzickom PC.
+
+Nevýhodou je že takýto Guest OS nie je vidieť separatne na internete a ak sa k nemu chceme pripojit musíme nastavit portforwarding.
+
+Guest OS dostane DHCP server a iné podstatné adresy z _Oracle VM VirtualBox NAT Engine_ ktorý sa chová ako router na klasickej siety. IP adresa sa prideluje z inej siete ako ta na ktorej je fyzický PC. Adresa začína 10.0.2.0 pre prvý interface, 10.0.3.0 predruhy int a tak dalej.
+
+___
+
+#### Bridged adapter
+
+Používaťel si vie zvoliť cez ktorý fyzický adaptér sa bude trafica na siety posielať
+
+Oracle VM VirtualBox využíva _net filter driver_ na to aby oddelil dáta ktoré sú smerované pre Guest OS. To znamená že na siety sa vytvorý virtualne rozhranie ktoré funguje ako další PC na siety, Guest OS dostane od DHCP všetko potrebné pre komunikáciu s routerom. Guest OS vkladá data fyzickému rozhraniu ktoré ho zabalí za svoje. To znamená že komunikácia na súkromnej siety medzi virtualnym OS a ostatnými PC s IP adresamy je možné.
+
+___
+
+#### Internal Network
 
 
+#### Host-only adapter
+#### Generic driver
+#### NAT Network
+#### Cloud Network
+#### Bez adaptéra
 
 <!-- Obsah vygenerovať neskor
 ak mas extension tak CTRL+SHIFT+P a napisat create table of content
