@@ -214,8 +214,10 @@ výstup:![echo PATH](./obrazky/Code_ReQBAEd5sU.png)
 Občas sa nás systém može spýtať či sme si naozaj istý, vtedy stači napisať yes a pokračovať
 Potom čo sme sa pripojili sa možme presvedčit ze sme naozaj pripojený na spravny počitač príkazmi:
 ```Bash
-neofetch
 sudo systemctl status sshd
+```
+```Bash
+neofetch
 ```
 ___
 ## Pripojenie cez NAT
@@ -238,7 +240,11 @@ Potom čo sme uspešne nastavili sieťové nastavenia potvrdíme ich a nabootuje
 Po GRUBe a nabootovaný sa prihlásime a štandardními prikazmi si overíme či Guest OS podporuje SSH a či má nejakú IP adresu na svojom private networku.
 ```Bash
 sudo systemctl status sshd
+```
+```Bash
 ip a
+```
+```Bash
 ifconfig
 ```
 výstup: ![echo PATH](./obrazky/VirtualBoxVM_LU090PFXpu.png)
