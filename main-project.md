@@ -96,6 +96,7 @@ Nevýhodou je že takýto Guest OS nie je vidieť separatne na internete a ak sa
 
 Guest OS dostane DHCP server a iné podstatné adresy z _Oracle VM VirtualBox NAT Engine_ ktorý sa chová ako router na klasickej siety. IP adresa sa prideluje z inej siete ako ta na ktorej je fyzický PC. Adresa začína 10.0.2.0 pre prvý interface, 10.0.3.0 predruhy int a tak dalej.
 
+![Markdown Logo](https://www.nakivo.com/blog/wp-content/uploads/2019/07/VirtualBox-network-settings-%E2%80%93-the-NAT-Network-mode.webp)
 ___
 
 #### Bridged adapter
@@ -104,16 +105,47 @@ Používaťel si vie zvoliť cez ktorý fyzický adaptér sa bude trafica na sie
 
 Oracle VM VirtualBox využíva _net filter driver_ na to aby oddelil dáta ktoré sú smerované pre Guest OS. To znamená že na siety sa vytvorý virtualne rozhranie ktoré funguje ako další PC na siety, Guest OS dostane od DHCP všetko potrebné pre komunikáciu s routerom. Guest OS vkladá data fyzickému rozhraniu ktoré ho zabalí za svoje. To znamená že komunikácia na súkromnej siety medzi virtualnym OS a ostatnými PC s IP adresamy je možné.
 
+![Markdown Logo](https://www.nakivo.com/blog/wp-content/uploads/2019/07/VirtualBox-network-settings-%E2%80%93-bridged-networking.webp)
 ___
 
 #### Internal Network
 
+Funguje podobne ako Bridge adapter s rozdielom tým že tento privatna sieť slúži iba pre Guest OS na jednom fyzickom PC.
+Táto sieť je použitá ak chcem mať viac virtuálnych PC na jednom fyzickom PC a chceme aby spolu komunikovali ale aby sa táto komunikacia nedostala k iným hostom na privatnej sieti fyzického PC.
+Pri Bridge adaptéry idú všetky packety cez fyzické rozhranie rozhranie host OS a preto sa dajú zaznamenať napr. cez Wireshark, takto tomu vie me zabrániť. 
+Pei vytváraný si vyberáme meno vďaka ktorému sa sieť identifikuje.
+Po čo __Oracle VM VirtualBox support driver__ detekuje další Guest OS s rovnakým network ID tak ich automatický pripojí a začne sa chovať ako _Switch_.
+Pre pripojenie na sieť možeme buď zvolit vstavaný DHCP server ale priradiť statické IP adresy.
+
+![Markdown Logo](https://www.nakivo.com/blog/wp-content/uploads/2019/07/VirtualBox-network-settings-%E2%80%93-using-the-Internal-network-mode-in-a-combination-with-the-NAT-mode.webp)
+___
 
 #### Host-only adapter
+
+Funguje ako zmiešanie Bridge a internal adaptérov.
+__Oracle VM VirtualBox__ vytvorý nový softwareový loopback interface hneď veďla fyzického interfacu.
+Pre jeden Guest OS možeme nastaviť Internal network aby vedel komunikovať iba vrámci host OS s iným Guest OS.
+Na druhom Guest OS nastavýme Host-Only, to znamená že druhý Guest OS vie komunikovať aj na internal network s prvým Guest OS ale zároveň ma aj IP adresu ako Bridge na privatnej sieti host OS.
+
+![Markdown Logo](https://www.nakivo.com/blog/wp-content/uploads/2019/07/VirtualBox-network-settings-%E2%80%93-VMs-use-the-host-only-network.webp)
+___
+
 #### Generic driver
+
+
+
 #### NAT Network
+
+
+
 #### Cloud Network
+
+Najnovšie nastavenie, je v štádiu vývoja Oracle ho označuje za __Experimentálne__. 
+
 #### Bez adaptéra
+
+Toto nastavenie znamená že Guest OS nedokaže komunikovať vôbec, jeho sieťová karta neexistuje/nie je pripojená a preto jeho pristup na akukoľvek sieť a jeho komunikacia je úplne znemožnená.
+___
 
 <!-- Obsah vygenerovať neskor
 ak mas extension tak CTRL+SHIFT+P a napisat create table of content
