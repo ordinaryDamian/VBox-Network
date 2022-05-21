@@ -277,6 +277,52 @@ Potom čo sme dokončili nastavenie port-forwarding možeme vyskúsať pripojeni
 
 Takto sme sa úspešne prihlasili cez SSH na PC vo vzdialenej sieti.
 
+## Trobleshooting
+
+```Bash
+sudo apt install net-tools openssh-server
+```
+Pre naistalovanie dodatocných sietových príkazov a SSHD
+
+```Bash
+sudo systemctl restart sshd
+```
+Reštartuje SSH deamona ak by nefungoval správne
+
+```Bash
+sudo systemctl stop sshd
+```
+Pozastavý deamona na čas co najbližsieho reštaru
+
+```Bash
+sudo systemctl disable sshd
+```
+Uplne vypne SSH deamona aj pri štarte
+
+```Bash
+sudo kill -x
+```
+Zastavý proces s daným PID
+
+```Bash
+sudo htop
+```
+Terminálový program kde si môžem pozrieť procesy na OS
+
+```Bash
+cat /var/log/auth.log
+```
+Výpis logov SSH
+
+```CMD
+netstat -ano | findstr :2222
+```
+Zistíme či niečo poćúva na host OS na danom porte
+
+```Bash
+netstat -pevanut | grep :22 
+```
+Či niečo počuva na Guest OS na danom porte
 ## Zdroje
 
 https://www.nakivo.com/blog/virtualbox-network-setting-guide/
