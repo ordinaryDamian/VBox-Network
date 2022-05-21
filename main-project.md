@@ -162,7 +162,17 @@ __Sumarizácia__
 
 ## Zapojenie a komunikacia pri Bridge adaptéry
 ### Nastavenie
+![echo PATH](./obrazky/VirtualBox_Tl9xQfuWIH.png)
+Pre vyskúśanie Bridge adaptéra budeme potrebovať uz existujúci Guest OS alebo si ho vytvoríme.
+Po vytvorený si klikneme na tlačidlo Settings.
+1. Po otvorený nastavený sa navigujeme do záložky Network
+2. Tam si klikneme na akýkoľvek adaptér (perferovaný je 1 aby sme pochopili nastavenia) a zaškrtneme _Enable Network Adapter_ 
+3. Z ponuky pri Attached to zvolíme _Bridget Adapetr_
+4. V kolonke Name zvolíme cez aký fyzický adaptér budememe komunikovať so sieťou (v našom prípade to bude Wi-Fi karta)
+5. Zašktneme _Cable Connected_ aby sme pripojili virtualny adaptér
+6. V prípade potreby zmeníme MAC acresu virtualneho adaptéra
 
+Potom už len všetko potvrdíme a bootujeme do Guest OS
 
 ## Zdroje
 
