@@ -58,7 +58,7 @@ TODO: vytvoiť obsah, tutorial je na spodku
 
 Virtual Box (type-2 hypervisor) je program v ktorom používateľ môže simulovať virtulany počítač ktorý bezi v takzvanom sandboxe a je oddelený od hlavného počitača ktorý beží priamo na komponentoch. Virtual Box beží ako program to znamená že o požiadavky na prístup k komponentom (CPU, RAM, ...) prechádzaju cez OS ktorý beží na komponentoch.
 
-
+![echo PATH](./obrazky/vivaldi_FT5iqMZDYR.png)
 
 ### VB - Virtual box ma mnoho nastavený
 
@@ -162,6 +162,7 @@ __Sumarizácia__
 
 ## Zapojenie a komunikacia pri Bridge adaptéry
 ### Nastavenie
+
 ![echo PATH](./obrazky/VirtualBox_Tl9xQfuWIH.png)
 Pre vyskúśanie Bridge adaptéra budeme potrebovať uz existujúci Guest OS alebo si ho vytvoríme.
 Pripojenie na nejakú sieť (postačí aj pripojenie na domácu privátnu sieť ktorá môže mať prístup aj na internet).
