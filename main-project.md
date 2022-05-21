@@ -143,7 +143,7 @@ __Virtual Distributed Ethernet (VDE) Networking__: Guest OS sa vedia pripojiť n
 
 #### NAT Network
 
-TODO:
+TODO: dorobiť este tento adapter
 
 #### Cloud Network
 
