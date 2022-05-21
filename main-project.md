@@ -49,7 +49,10 @@ img[src*='#center'] {
 # Nastavenia sietových kariet vo Virtual Box
 
 <center>Tento referát sa zaoberá sieťovými nastaveniami v programe Virtual Box</center>
+TODO: pripisať mena kto to este (ne)robil
 <center>Vypracoval: Damián Nadžady 3.A 13.5.2022</center>
+
+TODO: vytvoiť obsah, tutorial je na spodku
 
 ## Čo je Virtual Box a čo su jeho nastavenia
 
@@ -132,11 +135,15 @@ ___
 
 #### Generic driver
 
+Tento network mode umožnuje zdieľať generické sieťové interfaci. Používaťel sy može vybrat ktorý potrebuje, nachádzajú sa v extension packoch alebo sa musia kompilovať zo zdroja.
 
+Poznáme __UDP tunneling__: Prepojuje Guest OS jedneho host OS na iných host OS PC, funguje tak že zaobaľuje prijaté a odoslané Ethernetové framey guest sieťovou kartov do _UDP/IP datagrams_.
+
+__Virtual Distributed Ethernet (VDE) Networking__: Guest OS sa vedia pripojiť na _Virtual Distributed Switch (VDS)_ na _Linux_ alebo _FreeBDS_ host OS, Pre použitie je potrebné skompilovať VirtialBox zo zdroja.
 
 #### NAT Network
 
-
+TODO:
 
 #### Cloud Network
 
@@ -147,6 +154,20 @@ Najnovšie nastavenie, je v štádiu vývoja Oracle ho označuje za __Experiment
 Toto nastavenie znamená že Guest OS nedokaže komunikovať vôbec, jeho sieťová karta neexistuje/nie je pripojená a preto jeho pristup na akukoľvek sieť a jeho komunikacia je úplne znemožnená.
 ___
 
+__Sumarizácia__
+
+![Markdown Logo](https://www.nakivo.com/blog/wp-content/uploads/2019/07/VirtualBox-network-settings-%E2%80%93-Comparison-of-VirtualBox-Network-Modes.webp)
+
+---
+
+## Zapojenie a komunikacia pri Bridge adaptéry
+### Nastavenie
+
+
+## Zdroje
+
+https://www.nakivo.com/blog/virtualbox-network-setting-guide/
+https://www.virtualbox.org/manual/ch06.html#network_nat_service
 <!-- Obsah vygenerovať neskor
 ak mas extension tak CTRL+SHIFT+P a napisat create table of content
 -->
