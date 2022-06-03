@@ -277,6 +277,12 @@ Potom čo sme dokončili nastavenie port-forwarding možeme vyskúsať pripojeni
 
 Takto sme sa úspešne prihlasili cez SSH na PC vo vzdialenej sieti.
 
+---
+
+## Placeholder dalsej praktickej casti
+TODO: dorobiť ešte jeden z tých adaptérov prakticky, skúsiť nejaké iné nastavenie tej siete host only alebo niečo iné co si vyberiem, tak ako pri NAT to popsať a vyskúšať
+
+---
 ## Trobleshooting
 
 ```Bash
