@@ -50,7 +50,7 @@ img[src*='#center'] {
 
 <center>Tento referát sa zaoberá sieťovými nastaveniami v programe Virtual Box</center>
 TODO: pripisať mena kto to este (ne)robil
-<center>Vypracoval: Damián Nadžady 3.A 13.5.2022</center>
+<center>Vypracoval: Damián Nadžady 3.A 13.5.2022, Adrián Fáber 3.A 5.6.2022, Marek Šafařík 3.A 5.6.2022</center>
 
 TODO: vytvoiť obsah, tutorial je na spodku
 
