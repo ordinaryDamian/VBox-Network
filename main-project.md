@@ -309,6 +309,12 @@ Pri tejto možnosti uživateľ nemá prístup do žiadnej siete.
 
 ![echo PATH](./obrazky/image.png)
 
+Zapojenie tohto adaptéra si môžme ovoriť pomocou príkazu `ping`.
+
+![echo PATH](./obrazky/ping.png)
+
+Vidíme, že ping sa nedostal do siete resp. nie je zapojený žiadny sieťový adaptér
+
 ---
 ## Trobleshooting
 
