@@ -307,7 +307,7 @@ Takto sme sa úspešne prihlasili cez SSH na PC vo vzdialenej sieti.
 ## Not atached
 Pri tejto možnosti uživateľ nemá prístup do žiadnej siete.
 
-![echo PATH](./obrazky/not_attached.png)
+![echo PATH](./obrazky/image.png)
 
 ---
 ## Trobleshooting
