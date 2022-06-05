@@ -168,7 +168,7 @@ __Virtual Distributed Ethernet (VDE) Networking__: Guest OS sa vedia pripojiť n
 
 #### NAT Network
 
-TODO: dorobiť este tento adapter
+NAT network je druh adaptéra, ktorý povoľuje aj komunikáciu s vonkajšími sieťami.
 
 #### Cloud Network
 
