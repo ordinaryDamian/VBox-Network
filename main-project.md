@@ -45,7 +45,9 @@ img[src*='#center'] {
     margin: auto;
 }
 </style>
-#Obsah
+
+# Obsah
+
 - [Nastavenia sietových kariet vo Virtual Box](#nastavenia-sietových-kariet-vo-virtual-box)
   - [Čo je Virtual Box a čo su jeho nastavenia](#čo-je-virtual-box-a-čo-su-jeho-nastavenia)
     - [VB - Virtual box ma mnoho nastavený](#vb---virtual-box-ma-mnoho-nastavený)
