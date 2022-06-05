@@ -48,6 +48,7 @@ img[src*='#center'] {
 
 # Obsah
 
+- [Obsah](#obsah)
 - [Nastavenia sietových kariet vo Virtual Box](#nastavenia-sietových-kariet-vo-virtual-box)
   - [Čo je Virtual Box a čo su jeho nastavenia](#čo-je-virtual-box-a-čo-su-jeho-nastavenia)
     - [VB - Virtual box ma mnoho nastavený](#vb---virtual-box-ma-mnoho-nastavený)
@@ -67,7 +68,7 @@ img[src*='#center'] {
   - [Pripojenie cez NAT](#pripojenie-cez-nat)
     - [Nastavenie NAT](#nastavenie-nat)
     - [Nastavenie Port-Forwardingu](#nastavenie-port-forwardingu)
-  - [Placeholder dalsej praktickej casti](#placeholder-dalsej-praktickej-casti)
+  - [Not atached - Nepripojený na sieť](#not-atached---nepripojený-na-sieť)
   - [Trobleshooting](#trobleshooting)
   - [Zdroje](#zdroje)
 
@@ -304,7 +305,7 @@ Takto sme sa úspešne prihlasili cez SSH na PC vo vzdialenej sieti.
 
 ---
 
-## Not atached
+## Not atached - Nepripojený na sieť
 Pri tejto možnosti uživateľ nemá prístup do žiadnej siete.
 
 ![echo PATH](./obrazky/image.png)
@@ -314,6 +315,10 @@ Zapojenie tohto adaptéra si môžme ovoriť pomocou príkazu `ping`. Na danom o
 ![echo PATH](./obrazky/ping.png)
 
 Vidíme, že ping sa nedostal do siete resp. nie je zapojený žiadny sieťový adaptér
+
+![echo PATH](./obrazky/VirtualBoxVM_Zz8TVNoiXy.png)
+
+Na obrázku vidíme že VM sa nevie pripojiť na internet a nedokáže pingnuť google ani ak zadáme jeho IP adresu na internete. __ping 127.0.0.1__ je command ktorý ukazuje že sieťová karta je pripojená k VM ale nemá prístup (nie je pripojený kábel) na lokálnu sieť alebo na internet. Príkazom __ip a__ viem zistiť že VM ma iba loopback adresu.
 
 ---
 ## Trobleshooting
