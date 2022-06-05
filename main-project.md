@@ -45,6 +45,29 @@ img[src*='#center'] {
     margin: auto;
 }
 </style>
+#Obsah
+- [Nastavenia sietových kariet vo Virtual Box](#nastavenia-sietových-kariet-vo-virtual-box)
+  - [Čo je Virtual Box a čo su jeho nastavenia](#čo-je-virtual-box-a-čo-su-jeho-nastavenia)
+    - [VB - Virtual box ma mnoho nastavený](#vb---virtual-box-ma-mnoho-nastavený)
+    - [Sieťové nastavenia vo Virtual Boxe](#sieťové-nastavenia-vo-virtual-boxe)
+    - [Typ adaptéra](#typ-adaptéra)
+      - [NAT <b>Default</b>](#nat-bdefaultb)
+      - [Bridged adapter](#bridged-adapter)
+      - [Internal Network](#internal-network)
+      - [Host-only adapter](#host-only-adapter)
+      - [Generic driver](#generic-driver)
+      - [NAT Network](#nat-network)
+      - [Cloud Network](#cloud-network)
+      - [Bez adaptéra](#bez-adaptéra)
+  - [Zapojenie a komunikacia pri Bridge adaptéry](#zapojenie-a-komunikacia-pri-bridge-adaptéry)
+    - [Nastavenie](#nastavenie)
+    - [V Guest OS](#v-guest-os)
+  - [Pripojenie cez NAT](#pripojenie-cez-nat)
+    - [Nastavenie NAT](#nastavenie-nat)
+    - [Nastavenie Port-Forwardingu](#nastavenie-port-forwardingu)
+  - [Placeholder dalsej praktickej casti](#placeholder-dalsej-praktickej-casti)
+  - [Trobleshooting](#trobleshooting)
+  - [Zdroje](#zdroje)
 
 # Nastavenia sietových kariet vo Virtual Box
 
