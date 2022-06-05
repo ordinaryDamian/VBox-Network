@@ -309,7 +309,7 @@ Pri tejto možnosti uživateľ nemá prístup do žiadnej siete.
 
 ![echo PATH](./obrazky/image.png)
 
-Zapojenie tohto adaptéra si môžme ovoriť pomocou príkazu `ping`.
+Zapojenie tohto adaptéra si môžme ovoriť pomocou príkazu `ping`. Na danom obrázku som sa pokúšal pingnúť stránku __facebook.com__
 
 ![echo PATH](./obrazky/ping.png)
 
